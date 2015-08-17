@@ -1,0 +1,65 @@
+# me
+set realname = "Donald Raikes"
+set from = "donald-raikes@outlook.com"
+set envelope_from = yes
+
+# work account info
+set imap_user = "donald-raikes@outlook.com"
+set imap_pass = "REDACTED"
+set folder = "imaps://imap-mail.outlook.com:993"
+set imap_check_subscribed
+set smtp_url = smtps://
+set smtp_pass = $imap_pass
+set hostname = outlook.com
+set mail_check = 25
+set timeout = 300
+set imap_keepalive = 300
+ set imap_keepalive = 300
+
+ set postponed = "+[hotmail]/Drafts"
+
+ set record = "+[hotmail]/Sent Mail"
+
+ set header_cache=~/.mutt/cache/headers
+
+ set message_cachedir=~/.mutt/cache/bodies
+
+ set certificate_file=~/.mutt/certificates
+
+ set move = no
+
+ set include
+
+ set sort = 'threads'
+
+ set sort_aux = 'reverse-last-date-received'
+
+ set auto_tag = yes
+
+ ignore "Authentication-Results:"
+
+ ignore "DomainKey-Signature:"
+
+ ignore "DKIM-Signature:"
+
+ hdr_order Date From To Cc
+
+ alternative_order text/plain text/html *
+
+ auto_view text/html
+
+
+# default mailboxes
+## this is an exchange server, so this is where Outlook puts its stuff
+set spoolfile = "=INBOX"
+set record = "=Sent Items"
+set postponed = "=Drafts"
+
+# if you have more than a few emails, you *really* want this
+set header_cache = ~/.mutt/caches/work-headercache
+set message_cachedir = ~/.mutt/caches/work-messagecache
+
+# bring in the shared!
+source ~/.mutt/shared.rc
+
+# vim: ft=muttrc:
